@@ -1,5 +1,14 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '2.3.10'
+    id'org.jetbrains.kotlin.plugin.spring' version "2.0.21"
+    id 'org.springframework.boot' version '3.5.14'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
 }
 
 group = 'com.art'
@@ -10,11 +19,19 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.jetbrains.kotlin:kotlin-test'
-}
+    // Основной реактивный стартер
+    implementation("org.springframework.boot:spring-boot-starter-webflux")
 
-kotlin {
-    jvmToolchain(21)
+    // Coroutines + интеграция с Reactor
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
+
+    // Для удобной работы с JSON
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+
+    // Тесты
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test")
 }
 
 test {
