@@ -1,0 +1,17 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: api-auth
+
+jwt:
+  secret: very-secret-key
+  issuer: auth-service
+  expiration-ms: 3600000
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    com.art: DEBUG
