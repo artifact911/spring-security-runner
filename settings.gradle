@@ -1,3 +1,4 @@
 rootProject.name = 'spring-security-runner'
 
 include 'api-users'
+include 'api-auth'
