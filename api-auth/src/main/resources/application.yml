@@ -6,12 +6,10 @@ spring:
     name: api-auth
 
 jwt:
-  secret: very-secret-key
+  secret: my-super-ultra-secret-key-for-jwt-auth-256-bit
   issuer: auth-service
   expiration-ms: 3600000
 
 logging:
   level:
     root: INFO
-    org.springframework.web: DEBUG
-    com.art: DEBUG

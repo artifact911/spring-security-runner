@@ -1,4 +1,4 @@
-package com.art
+package gateway
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
